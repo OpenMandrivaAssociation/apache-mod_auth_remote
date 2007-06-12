@@ -7,7 +7,7 @@
 Summary:	Mod_auth_remote is a DSO module for the apache Web server
 Name:		apache-%{mod_name}
 Version:	0.1
-Release:	%mkrel 9
+Release:	%mkrel 10
 Group:		System/Servers
 License:	GPL
 URL:		http://saju.pillai.googlepages.com/mod_auth_remote
