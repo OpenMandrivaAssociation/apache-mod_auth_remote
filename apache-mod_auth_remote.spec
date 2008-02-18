@@ -4,7 +4,7 @@
 %define mod_conf 82_%{mod_name}.conf
 %define mod_so %{mod_name}.so
 
-Summary:	Mod_auth_remote is a DSO module for the apache Web server
+Summary:	DSO module for the apache Web server
 Name:		apache-%{mod_name}
 Version:	0.1
 Release:	%mkrel 13
