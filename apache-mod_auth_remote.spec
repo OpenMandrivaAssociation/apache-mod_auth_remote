@@ -7,7 +7,7 @@
 Summary:	DSO module for the apache Web server
 Name:		apache-%{mod_name}
 Version:	0.1
-Release:	%mkrel 15
+Release:	%mkrel 16
 Group:		System/Servers
 License:	GPL
 URL:		http://saju.pillai.googlepages.com/mod_auth_remote
@@ -24,7 +24,7 @@ Requires:	apache-conf >= %{apache_version}
 Requires:	apache >= %{apache_version}
 BuildRequires:  apache-devel >= %{apache_version}
 Epoch:		1
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 This module is a very simple, lightweight method of setting up a single signon
