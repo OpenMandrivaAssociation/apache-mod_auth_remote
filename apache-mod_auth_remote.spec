@@ -7,7 +7,7 @@
 Summary:	DSO module for the apache Web server
 Name:		apache-%{mod_name}
 Version:	0.1
-Release:	%mkrel 16
+Release:	%mkrel 17
 Group:		System/Servers
 License:	GPL
 URL:		http://saju.pillai.googlepages.com/mod_auth_remote
