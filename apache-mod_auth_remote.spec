@@ -6,16 +6,13 @@
 
 Summary:	DSO module for the apache Web server
 Name:		apache-%{mod_name}
-Version:	0.1
-Release:	%mkrel 18
+Version:	0.2
+Release:	%mkrel 0.1
 Group:		System/Servers
-License:	GPL
+License:	Apache License
 URL:		http://saju.pillai.googlepages.com/mod_auth_remote
-Source0:	%{mod_name}-%{version}.tar.bz2
+Source0:	http://github.com/saju/mod_auth_remote/raw/dd48860bdca8366df1d93cd5df66a128278b6104/src/mod_auth_remote.c
 Source1:	%{mod_conf}
-Patch0:		mod_auth_remote-0.1-register.patch
-Patch1:		mod_auth_remote-0.1-apr1_1.diff
-Patch2:		mod_auth_remote-0.1-apr1_2.diff
 Requires(pre): rpm-helper
 Requires(postun): rpm-helper
 Requires(pre):  apache-conf >= %{apache_version}
@@ -42,11 +39,9 @@ responses the client is not validated.
 
 %prep
 
-%setup -q -c -n %{mod_name}-%{version} -a0
-%patch0 -p0
-%patch1 -p0
-%patch2 -p0
+%setup -q -T -c -n %{mod_name}-%{version}
 
+cp %{SOURCE0} %{mod_name}.c
 cp %{SOURCE1} %{mod_conf}
 
 %build
@@ -78,6 +73,5 @@ fi
 
 %files
 %defattr(-,root,root)
-%doc readme.txt
 %attr(0644,root,root) %config(noreplace) %{_sysconfdir}/httpd/modules.d/%{mod_conf}
 %attr(0755,root,root) %{_libdir}/apache-extramodules/%{mod_so}
