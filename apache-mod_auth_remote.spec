@@ -6,11 +6,11 @@
 Summary:	DSO module for the apache Web server
 Name:		apache-%{mod_name}
 Version:	0.2
-Release:	1
+Release:	2
 Group:		System/Servers
 License:	Apache License
 URL:		http://saju.pillai.googlepages.com/mod_auth_remote
-Source0:	http://github.com/saju/mod_auth_remote/raw/dd48860bdca8366df1d93cd5df66a128278b6104/src/mod_auth_remote.c
+Source0:	https://raw.github.com/saju/mod_auth_remote/master/src/mod_auth_remote.c
 Requires(pre): rpm-helper
 Requires(postun): rpm-helper
 Requires:	apache >= %{apache_version}
@@ -48,7 +48,7 @@ install -d %{buildroot}%{_sysconfdir}/httpd/modules.d
 install -m0755 .libs/*.so %{buildroot}%{_libdir}/apache/
 
 cat > %{buildroot}%{_sysconfdir}/httpd/modules.d/%{load_order}_%{mod_name}.conf << EOF
-LoadModule auth_remote_module %{_libdir}/%{mod_name}.so
+LoadModule auth_remote_module %{_libdir}/apache/%{mod_name}.so
 EOF
 
 %post
@@ -60,6 +60,5 @@ if [ "$1" = "0" ]; then
 fi
 
 %files
-%doc ChangeLog INSTALL README
 %attr(0644,root,root) %config(noreplace) %{_sysconfdir}/httpd/modules.d/*.conf
 %attr(0755,root,root) %{_libdir}/apache/*.so
