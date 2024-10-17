@@ -10,7 +10,7 @@ Version:	0.2
 Release:	0.19
 Group:		System/Servers
 License:	Apache License
-URL:		http://saju.pillai.googlepages.com/mod_auth_remote
+URL:		https://saju.pillai.googlepages.com/mod_auth_remote
 Source0:	http://github.com/saju/mod_auth_remote/raw/dd48860bdca8366df1d93cd5df66a128278b6104/src/mod_auth_remote.c
 Source1:	%{mod_conf}
 Requires(pre): rpm-helper
